@@ -1,9 +1,4 @@
-<mat-tab-group>
-  <mat-tab label="First"> 
-    
-    <button mat-raised-button (click)="isOptional = !isOptional">
-      {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
-    </button>
+
     
     <mat-horizontal-stepper linear #stepper>
       <mat-step [stepControl]="firstFormGroup">
@@ -38,10 +33,5 @@
         </div>
       </mat-step>
     </mat-horizontal-stepper>
-
-  </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
-  <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group>
 
 <router-outlet></router-outlet>
