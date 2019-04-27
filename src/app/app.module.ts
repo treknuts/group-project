@@ -12,14 +12,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { ContactsComponent } from './contacts/contacts.component';
 import { UsersComponent } from './users/users.component';
-import { SoftwareComponent } from './software/software.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     UsersComponent,
-    SoftwareComponent
   ],
   imports: [
     BrowserModule,
