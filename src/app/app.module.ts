@@ -10,10 +10,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
+import { ContactsComponent } from './contacts/contacts.component';
+import { UsersComponent } from './users/users.component';
+import { SoftwareComponent } from './software/software.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactsComponent,
+    UsersComponent,
+    SoftwareComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +30,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireStorageModule
-
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
