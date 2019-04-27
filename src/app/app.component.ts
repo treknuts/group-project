@@ -6,18 +6,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit { 
+export class AppComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   isOptional = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
+    this.firstFormGroup = this.formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
-    this.secondFormGroup = this._formBuilder.group({
+    this.secondFormGroup = this.formBuilder.group({
       secondCtrl: ''
     });
   }
