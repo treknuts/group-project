@@ -1,6 +1,20 @@
 <form [formGroup]="firstFormGroup">
-  <ng-template matStepLabel>Fill out your name</ng-template>
-  <mat-form-field>
-    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-title>
+      Select Sofware Contact
+    </mat-card-title>
+    <mat-card-content>
+      <br>
+      <br>
+      <br>
+      <mat-form-field style="width: 100%">
+      <mat-label>Software Contacts</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let contact of contacts" [value]="contact.name">
+          <strong>{{ contact.name }}</strong>:  {{ contact.dept }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </mat-card-content>
+  </mat-card>
 </form>

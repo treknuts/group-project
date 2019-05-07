@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SoftwareService } from '../software.service';
 import { UsersService } from '../users.service';
-import { Order } from './order';
 import { User } from './user';
 import { Software } from '../software';
 
