@@ -1,6 +1,68 @@
-<form [formGroup]="secondFormGroup">
-  <ng-template matStepLabel>Fill out your address</ng-template>
-  <mat-form-field>
-    <input matInput placeholder="Address" formControlName="secondCtrl" required>
-  </mat-form-field>
-</form>
+<mat-grid-list cols="2" rowHeight="500px">
+  <mat-grid-tile id="formTile">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <input matInput id="fname" placeholder="First Name" formControlName="secondCtrl" [(ngModel)]="first" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput id="lname" placeholder="Last Name" formControlName="secondCtrl" [(ngModel)]="last" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput id="office" placeholder="Office location" formControlName="secondCtrl" [(ngModel)]="office"required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" placeholder="Phone Number" formControlName="secondCtrl" [(ngModel)]="phoneNum" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+      <mat-label>Software</mat-label>
+        <mat-select [(ngModel)]="selectControl" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let soft of software" [value]="soft.name">
+            {{soft.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="number" min="99999" maxlength="10000" size="5" id="fund" placeholder="Fund number" formControlName="secondCtrl" [(ngModel)]="fundNum" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="number" min="99999" maxlength="10000" size="5" id="invNum" placeholder="Machine Number" formControlName="secondCtrl" [(ngModel)]="invNum" required>
+      </mat-form-field>
+    </form>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>
+        User Preview
+      </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>Users name: {{ first }} {{ last }}</mat-list-item>
+          <mat-list-item>Office location: {{ office }}</mat-list-item>
+          <mat-list-item>Phone number: {{ phoneNum }}</mat-list-item>
+          <mat-list-item>Fund number: {{ fundNum }}</mat-list-item>
+          <mat-list-item>Machine Number: {{ invNum }}</mat-list-item>
+          <mat-list-item>Software: {{ selectControl }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <button mat-raised-button (click)="onSubmit()">Add to Order</button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="1" rowHeight="200px">
+  <mat-grid-tile id="orderDisplay">
+    Your Order:
+    <mat-list>
+      <mat-list-item *ngFor="let blah of softSelected">{{ blah.name }}</mat-list-item>
+    </mat-list>
+    <mat-list>
+      <mat-list-item *ngFor="let foo of usersOnOrder">{{ foo.firstName }} {{ foo.lastName }} {{ foo.machineInv }}</mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+</mat-grid-list>

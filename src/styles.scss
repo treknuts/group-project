@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-grid-list   {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    justify-content: left;
+    align-content: left;
+    align-items: flex-start;
+    margin-top: 0px;
+}
+
+#orderDisplay   {
+    align-items: flex-start;
+}
+
+mat-card    {
+    width: 85%;
+    align-self: center;
+}
+
+mat-card-title  {
+    align-items: left;
+}
