@@ -12,6 +12,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { ContactsComponent } from './contacts/contacts.component';
 import { UsersComponent } from './users/users.component';
+import { ContactServService } from './contact-serv.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { UsersComponent } from './users/users.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
   ],
-  providers: [],
+  providers: [ContactServService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
