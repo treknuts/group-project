@@ -1,6 +1,11 @@
 <form [formGroup]="firstFormGroup">
   <ng-template matStepLabel>Fill out your name</ng-template>
   <mat-form-field>
+    <mat-select [(ngModel)]='selectedValue' name="contact" [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let contact of contacts">
+        {{contact.name}}
+      </mat-option>
+    </mat-select>
     <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
   </mat-form-field>
 </form>
