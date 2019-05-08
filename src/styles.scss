@@ -28,8 +28,19 @@ mat-card-title  {
 .foofoo {
     width: 100%;
     height: 100%;
+    margin-right: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+    align-content: flex-start;
+    display: inline-block;
+}
+
+.barbar {
+    width: 100%;
+    height: 100%;
     margin: 0%;
     padding: 10px;
     overflow-y: scroll;
     align-content: flex-start;
+    display: inline-block;
 }
