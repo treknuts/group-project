@@ -57,11 +57,13 @@
 </mat-grid-list>
 <mat-grid-list cols="1" rowHeight="200px">
   <mat-grid-tile id="orderDisplay">
+    <h3>Your Order</h3>
     <div class="foofoo">
-      <h3>Your Order</h3>
       <mat-list>
         <mat-list-item *ngFor="let blah of softSelected">{{ blah.name }}</mat-list-item>
       </mat-list>
+    </div>
+    <div class="barbar">
       <mat-list>
         <mat-list-item *ngFor="let foo of usersOnOrder">{{ foo.firstName }} {{ foo.lastName }} {{ foo.machineInv }}</mat-list-item>
       </mat-list>
