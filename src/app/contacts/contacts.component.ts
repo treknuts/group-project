@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { ContactService } from '../contact.service';
 import { Contacts } from './contacts';
@@ -9,7 +9,10 @@ import { Contacts } from './contacts';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  firstFormGroup: FormGroup;
+
+
+
+  @Input('input') firstFormGroup: FormGroup;
   isOptional = false;
   contacts: Contacts[];
 
@@ -18,9 +21,6 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     this.contactService.getContacts().subscribe(data => {this.contacts = data;});
     
-    this.firstFormGroup = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
   }
 
 }

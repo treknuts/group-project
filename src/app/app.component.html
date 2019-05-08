@@ -1,5 +1,5 @@
 <mat-toolbar>
-<mat-toolbar-row>
+  <mat-toolbar-row>
     <span>North Dakota State University Software Order Form</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
@@ -9,16 +9,11 @@
 
 <mat-horizontal-stepper linear #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <app-contacts></app-contacts>
-    <div>
-      <button mat-button matStepperNext>Next</button>
-    </div>
+    <app-contacts [input]="firstFormGroup"></app-contacts>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
-    <app-users></app-users>
-    <div>
-        <button mat-button matStepperPrevious>Back</button>
-      </div>
+    <app-users [input] = "secondFormGroup"></app-users>
+    
   </mat-step>
 </mat-horizontal-stepper>
 
