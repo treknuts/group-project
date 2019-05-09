@@ -5,6 +5,7 @@ import { UsersService } from '../users.service';
 import { User } from './user';
 import { Software } from '../software';
 import { ifStmt } from '@angular/compiler/src/output/output_ast';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -18,7 +19,7 @@ export class UsersComponent implements OnInit {
   first: string;
   last: string;
   office: string;
-  phone: string;
+  phone: string = '';
   fund: number;
   machineNumber: number;
   selectControl: string;
@@ -83,12 +84,13 @@ export class UsersComponent implements OnInit {
       console.log(this.softSelected[0].name);
       this.usersOnOrder.push(user);
 
-      this.first = '';
-      this.last = '';
-      this.office = '';
-      this.phone = '';
-      this.fund = null;
+      ((document.getElementById("fname") as HTMLInputElement).value) = '';
+      ((document.getElementById("lname") as HTMLInputElement).value) = '';
+      ((document.getElementById("office") as HTMLInputElement).value) = '';
+      ((document.getElementById("phone") as HTMLInputElement).value) = '';
+      ((document.getElementById("fund") as HTMLInputElement).value) = '';
       this.selectControl = '';
+      ((document.getElementById("invNum") as HTMLInputElement).value) = '';
     }
   }
 }
